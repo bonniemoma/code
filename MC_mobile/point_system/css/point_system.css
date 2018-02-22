@@ -1,0 +1,336 @@
+
+.listsPages.bkgd-img img {
+    height: 105vh;
+    width: auto; 
+    position: relative;
+	top: 0;
+	left: 0;
+    -moz-transform: scaleX(-1); /* flip left-right */
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+
+/* -------------- TAB-CONTENT CSS --------------- */
+.tab-content {
+    position: relative;
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+
+
+/* ----------------mypoints_icon---------------- */
+.points > p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.points-icon {
+    border-radius: 50%;
+    background-color: #579AAD;
+    text-align: center;
+    height: 25px;
+    width: 25px;
+    line-height: 20px;
+    color: #ffffff;
+}
+
+
+/* -------------- PRODUCT-LIST CSS --------------- */
+.product-list {
+	width: 100%;
+	position: relative;
+}
+.product-list .product-item {
+    width: 100%;
+	position: relative;
+	background-color: rgba(12,12,12,.5);
+	box-sizing: border-box;
+	padding: 5% 4.5% 3% 4.5%;
+	border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid #71cfee;
+    margin-top: 20px;
+}
+.product-list .product-item:first-child {
+    margin-top: 0;
+}
+
+.product-img {
+    width: 40%;
+    
+}
+.product-img .img-wrapper {
+    width: 75%;
+    /* height: 80%; */
+    margin: auto;
+}
+#coupon .img-wrapper {
+    width: 100%;
+    margin: 25% 0;
+}
+.img-wrapper img {
+    width: 100%;
+}
+.product-description {
+    width: 55%;
+}
+
+.points-amt > p  {
+    display: inline-block;
+    vertical-align: top;
+}
+.points-amt {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+}
+
+/* -------------- PRODUCT-LIST CSS --------------- */
+.points-alert {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(12,12,12,.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 15;
+}
+.points-alert.showAlert {
+    display: block;
+}
+
+.alert-content {
+    position: absolute;
+    top: -10vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 70vw;
+    height: 160px;
+    box-sizing: border-box;
+    padding: 15px;
+    background-color: rgba(50,50,50,.95);
+    border-top: 2px solid #71cfee;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 7px 0 rgba(12,12,12,.4);
+}
+.alert-content p {
+    text-align: center;
+    padding: 0 15px;
+    margin-top: 10px;
+    color: rgba(235,235,235,.8);
+    letter-spacing: 1px;
+}
+.alert-content p i {
+    font-size: 1.25em;
+}
+
+/* -------------- COUPON CSS --------------- */
+.coupon {
+    position: relative;
+}
+.coupon:first-child {
+    margin-top: 0;
+}
+
+.coupon.coupon-used .coupon-content {
+    opacity: .5;
+}
+.coupon-content {
+    position: relative;
+    background-position: -6px 0;
+    background-size: 103%;
+    background-repeat: no-repeat;
+    height: 32vh;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+}
+
+.coupon-base {
+    width: 100%;
+}
+.coupon-base img {
+    width: 102%;
+    margin-left: -3%;
+}
+
+.coupon-side {
+    width: 12vw;
+    height: auto;
+    position: relative;
+    top: 13vh;
+    left: -5vw;;
+}
+
+.coupon-side img {
+    width: 200%;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+}
+
+.coupon-right-img {
+    width: 25%;
+    margin: 1.3vh 7vw 0 0;
+    position: absolute;
+    right: 0;
+}
+.coupon-right-img img {
+    width: 100%;
+}
+
+.coupon-text-base {
+    position: relative;
+    top: 1vh;
+    left: 6vw;
+}
+
+.coupon-title {
+    color: #62766D;
+    font-size: 1.5em;
+    letter-spacing: 1.5px;
+    margin-top: 3.5vh;
+}
+.coupon-description {
+    color: rgba(235,235,235,1);
+    font-size: .9em;
+    letter-spacing: 1px;
+    margin: 1vh 0 0 6vw;
+}
+.coupon-description span {
+    color: #87A095;
+}
+
+.exchange-date {
+    color: rgba(235,235,235,.9);
+    font-size: .7em;
+    /* margin: 1.5vh 0 0 0; */
+    visibility: hidden;
+}
+.exchange-date.showDate {
+    visibility: visible;
+}
+
+.exchange-amt.text-olive {
+    color: #6B8076;
+}
+
+.exchangeRmb.text-pink {
+    color: #C25F63;
+}
+.exchangeRmb.coupon-fz {
+    font-size: 2.1em;
+}
+
+
+/* -------------- COUPON QR CODE CSS --------------- */
+.coupon-qrcode {
+    width: 35vw;
+    margin: 3.5vh 0 0 8vw;
+}
+.qrcode-img-wrap, .coupon-qrcode img {
+    width: 100%;
+}
+.coupon-qrcode-text {
+    position: relative;
+    top: 3vh;
+    left: 4vw;
+}
+.qrcode-code {
+    color: #4A4A4A;
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: -1vh;
+}
+
+
+/* -------------- BARCODE CSS --------------- */
+/* .barcode {
+    width: 99%;
+    height: 19vh;
+    overflow: hidden;
+    position: relative;
+    left: 1px;
+    top: -2vh;
+    border-top: 5px solid #495952;
+    box-shadow: 2px 3px 5px 0px rgba(12,12,12,.3);
+}
+.barcode img {
+    width: 100%;
+} */
+
+
+/* -------------- BARCODE CSS --------------- */
+.used-label {
+    position: absolute;
+    top: 2vh;
+    right: 3vw;
+    padding: 1% 4%;
+    border-radius: 3px;
+    color: #ffffff;
+    font-weight: bold;
+    border: 2px solid #E9A1A1;
+    background-color: rgba(216,124,124,.9);
+    z-index: 5;
+    display: none;
+}
+
+.coupon.coupon-used .used-label{
+    display: block;
+}
+
+
+/* -------------- EXCHANGE-TEXT CSS --------------- */
+.exchange-text {
+    text-align: center;
+}
+.exchange-text > p {
+    color: rgba(235,235,235,.8);
+    letter-spacing: 1px;
+}
+
+.exchange-text p:first-child input {
+    -webkit-appearance: none;
+    width: 120px;
+    font-size: 1.25em;
+    box-sizing: border-box;
+    padding: 5px 15px;
+    margin: 0 10px;
+    color: rgba(113,207,238,1);
+    background-color: transparent;
+    border: 1px solid rgba(113,207,238,1);
+    transition: border-color .5s ease-in-out,
+                background-color .5s ease-in-out,
+                color .5s ease-in-out;
+}
+
+.exchange-text p:first-child input:focus {
+    -webkit-appearance: none;
+    outline: none;
+    color: rgba(238,238,238,1);
+    background-color: rgba(113,207,238,.3);
+    border: 1px solid rgba(113,207,238,1);
+    transition: border-color .5s ease-in-out,
+                background-color .5s ease-in-out,
+                color .5s ease-in-out;
+}
+
+
+/* -------------- EMPTY COUPON LIST CSS --------------- */
+.empty {
+    display: none;
+}
+.empty.isEmpty {
+    display: block;
+}
+.empty .img-wrapper {
+    width: 120px;
+    margin: 50px auto 0 auto;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>電影蛋糕 - 我的積分</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta name="description" content="" />
+    <link rel="canonical" href="http://test.moviecaker.com/video/M00000000158105">
+
+    <link href="css/store.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="content">
+        <div class="section-title fz-subtitle text-blue">核銷代金卷</div>
+        <section class="search maT2x padLR1x">
+            <p>用戶代金卷號碼</p> 
+            <input class="maT1x" type="text"/> <br>
+            <button class="btn btn-short maT2x" type="submit">搜尋</button>
+        </section>
+        <!-- span add class "loading" 會出現 loading -->
+        <span class="divider-line maT2x"></span>
+        <!-- section add class "result-error" 會出現 搜尋結果錯誤 樣式 -->
+        <!-- section add class "result-normal" 會出現 搜尋結果正常 樣式 -->
+        <!-- section add class "result-used" 會出現 搜尋結果已使用過 樣式 -->
+        <section class="result maT3x padLR1x">
+            <div class="error">查無此代金卷</div>
+            <div class="found">
+                <div class="group-wrap">
+                    <p class="pull-left">抵扣金額</p>
+                    <p class="pull-right maL1x">RMB<span class="rmb-amt">88</span>元</p>
+                    <p class="pull-right text-color-pink used-label">已使用過</p>
+                </div>
+            </div>
+            <button class="btn btn-normal maT6x btn-exchange" type="submit">確定核銷</button>
+        </section>
+    </div>
+</body>
+</html>

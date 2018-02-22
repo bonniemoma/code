@@ -1,0 +1,141 @@
+
+.search-wrap {
+    padding: 7%;
+    box-sizing: border-box;
+    background-color: #0c0c0c;
+}
+
+.search-control {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    padding: 4em 5% 1em 5%;
+    background-color: rgba(12,12,12,.95);
+    z-index: 5;
+}
+.search-control.scroll {
+    box-shadow: 0px 0px 2px 4px rgba(0,0,0,0.5);
+}
+
+
+/* ---------- SEARCH section ---------- */
+.search-control .search-result-area {
+    position: relative;
+}
+.search-control .search-result-keyword {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    font-size: 1.2em;
+}
+
+.search-control .search-result-keyword form {
+    width: 100%;
+}
+
+.search-control .search-result-keyword input::-webkit-search-cancel-button {
+    position: relative;
+    right: -500px;
+}
+.search-control .search-result-keyword input {
+    width: 100%;
+    background: #222222;
+    padding: 3% 0 3% 45px;
+    font-size: .9em;
+    color: #eeeeee;
+    border-right: 2px solid transparent;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -webkit-appearance: none;
+    cursor: text;
+    transition: background-color .5s,
+                border-color .5s,
+                color .5s;
+}
+.search-control .search-result-keyword input:focus {
+    outline: none;
+    color: #71cfee;
+    background: #2d2d2d;
+    border-right: 2px solid #71cfee;
+    border-radius: 5px 0 0 5px;
+}
+
+.search-control .search-result-keyword i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    color: #71cfee;
+    font-size: 1em;
+}
+
+.filter-menu ul.nav-type-scroll {
+    border-bottom: 1px solid rgba(200,200,200,.05);
+}
+.filter-menu ul.nav-type-scroll > li {
+    padding-bottom: 5px;
+}
+
+.optionNum-5 > li {
+	width: 20%;
+}
+.optionNum-5 > li.active a {
+    color: #71cfee;
+}
+.optionNum-5 > li > a {
+    color: rgba(238,238,238,.6);
+}
+
+
+/* ---------- SEARCH-RESULT section ---------- */
+.search-result {
+    margin-top: 13em;
+}
+
+.section-title, .page-title {
+	cursor: default;
+    position: relative;
+    font-weight: bold;
+	letter-spacing: 1px;
+}
+.page-title:before {
+    content:'';
+    position: absolute;
+    top: 2px;
+    left: -5.5%;
+    height: 20px;
+    width: 5px;
+    vertical-align: middle;
+    background-color: #71cfee;
+}
+
+.section-title:not(.page-title) {
+    margin-left: -1%;
+}
+.section-title:not(.page-title):before {
+    content: none;
+}
+
+.result-list li {
+    border-bottom: 1px solid rgba(238,238,238,.2);
+    font-size: 1em;
+}
+
+.search-category {
+    letter-spacing: 1px;
+    display: none;
+}
+.search-result.showAllResult > section {
+    display: block;
+}
+.category-movie.active, .category-project.active,
+.category-cast.active, .category-user.active {
+    display: block;
+}
+
+
+
+
+

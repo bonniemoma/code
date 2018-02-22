@@ -1,0 +1,466 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>专题：在電影中看見的愛情心法13條</title>
+    <meta name="description" content="你最嚮往什麼樣的愛情？什麼樣的愛情最迷人？有人嚮往青梅竹馬的愛情。有人嚮往一見鍾情的心悸。有人貪戀絕處逢生的逆轉……每一次的選擇都要看邱比特從什麼角度射出他的箭。愛情，通常不愛說話，它只是悄悄地溢滿你..." />
+    <link rel="canonical" href="http://test.moviecaker.com/topic/160">
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--<link href="css/custom.css" rel="stylesheet" />-->
+    <!--<link href="css/screen.css" rel="stylesheet" />-->
+    <link href="../entire_css/common.css" rel="stylesheet" />
+    <link href="css/project.css" rel="stylesheet" />
+    <link href="../entire_css/min-search.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="http://test.moviecaker.com/Content/mobile/icomoon/style.min.css" rel="stylesheet" />
+</head>
+<body ng-controller="MainCtrl as main">
+    <!--<div ng-hide="main.appReady">
+        <div class="loader">Loading...</div>
+    </div>-->
+    <div ng-show="main.appReady" ng-init="main.init('805159066237146','4036480982','101224571')" class="ng-cloak" ng-cloak>
+        <!-- search area -->
+        <div class="search-area group-wrap">
+            <form> 
+                <button class="btn-close group-wrap" type="reset">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                </button>
+                <div class="search-keyword ui">
+                    <i class="fa fa-search fa-lg pull-left" aria-hidden="true"></i>
+                    <input id="search-input" class="pull-left" type="search" name="" value="" placeholder="尋找電影..." ng-model="main.searchText" ng-bind="main.searchText" multi-search/>
+                </div>
+            </form>
+            <div id="search-autocomplete"></div>
+            <a href="#" class="more pull-right"><i class="fa fa-angle-right padR1x" aria-hidden="true"></i>更多搜尋結果</a>
+        </div>
+        
+        <!-- header -->
+        <div class="header" ng-class="{ blur: main.screenStatus() }">
+            <ul class="group-wrap header-items" ng-show="!main.isSearchMode">
+                <li id="logo" class="pull-left">
+                    <a href="/mobile" class="padT3 group-wrap">
+                        <img class="pull-left" src="http://test.moviecaker.com/Areas/Mobile/Images/logo.png" height="25" alt="MovieCaker" />
+                        <i class="fa fa-bars maL1x padT3 pull-left" aria-hidden="true"></i>
+                    </a>
+                </li>
+                <li id="user-icon" class="pull-right">
+                    <a href="/login" ng-click="main.MenuLogin()">
+                        <div class="login-icon padTBHalfX maLHalfx">
+                            <img src="img/login_icon.png"alt="">
+                        </div>
+                    </a>
+                    <!-- 登入後顯示 -->
+                    <a href="#" style="display:none;">
+                        <div class="circle-mask circle1x">
+                            <img src="img/default_avatar.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li id="search-icon" class="pull-right maR1x">
+                    <i class="fa fa-search padTBHalfX" aria-hidden="true"></i>
+                </li>
+            </ul>
+        </div>
+        
+        <!--<div class="popTo" ng-show="main.screenStatus()" style="background-color: rgba(0,0,0,.3);z-index:99999999">
+            <div class="loader">Loading...</div>
+        </div>-->
+
+
+        <div ng-class="{ blur: main.screenStatus() }">
+            <div ng-controller="TopicDetailsCtrl as vm" ng-init="vm.init('160')">
+                <!-- fixed background -->
+                <div class="bkgd-img">
+                    <!--<img ng-src="http://121.41.34.59/Content/pictures/banners/{{ vm.topicMovies[0].VideoId }}.png?width=320" onerror="this.src=''">-->
+                    <div class="white-mask"></div>
+                    <img src="img/theoryOE.png" alt="">
+                </div>
+
+                 <!--回應匡 (只有登入後才會出現) -->
+                <div class="sticky sticky-bottom typeReply">
+                    <form action="" method="post">
+                        <ul class="addComment group-wrap">
+                            <li class="pull-left">
+                                <div class="circle-mask circle1x">
+                                    <img src="img/default_avatar.png" alt="">
+                                    <!--<img ng-src="/Uploads/UserAvatar/{{vm.currentUser.Avatar}}" alt="" user-avatar />-->
+                                </div>
+                            </li>
+                            <li class="pull-right">
+                                <button class="btn-post" type="button" ng-click="vm.replyToVideoReview('')">發表</button>
+                            </li>
+                            <li>
+                                <textarea name="replyto" id="replysend" rows="1" class="addComment-text typeReply" placeholder="回應..." ng-model="vm.replyMessage" show-focus="response"></textarea>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+
+                <!-- MAIN CONTENT -->
+                <div class="content-wrap short-bottom">
+                    <section class="movieInfo">
+                        <article class="padLR10 maT2x">
+                            <ul class="poster-group project-comment padT1x">
+                                <li><img src="img/movie1.jpg" alt=""></li>
+                                <li><img src="img/movie2.jpg" alt=""></li>
+                                <li><img src="img/movie3.jpg" alt=""></li>
+                                <li><img src="img/movie4.jpg" alt=""></li>
+                                <li><img src="img/movie5.jpg" alt=""></li>
+                            </ul>
+                            <a href="#" class="avatar-large avatar-pos-center circle4x maT-50">
+                                <div class="circle-mask circle100 rel-pos">
+                                    <!--<user-avatar data-image-src="/Uploads/UserAvatar/user_164.jpg"></user-avatar>-->
+                                    <img src="img/default_avatar.png" alt="">
+
+                                    <!-- 是不是朋友 - 登入後才會顯示 -->
+                                    <div ng-show="vm.currentUser.isAuthenticated">
+                                        <div class="text-blue btn-friendOption bkgd-light-grey ng-hide" ng-show="vm.isFriend && vm.review.UserId!=vm.currentUser.Id"><i class="fa fa-check" aria-hidden="true"></i> 朋友</div>
+                                        <div class="text-black btn-friendOption bkgd-grey ng-hide"><i class="fa fa-clock-o" aria-hidden="true"></i> 待確認</div>
+                                        <div class="text-white btn-friendOption bkgd-grey ng-hide" ng-show="!vm.isFriend && vm.review.UserId!=vm.currentUser.Id"><i class="fa fa-user-plus" aria-hidden="true"></i> 加朋友</div>
+                                    </div> 
+                                </div>
+                            </a>
+
+                            <a class="user-name maTHalf1x" href="#">歡影 </a>
+
+                            <section class="maT2x reviewContent">
+                                <h2 class="fz-subtitle text-white taC">
+                                    <a href="#" class="text-light-blue">“在電影中看見的愛情心法13條”</a>
+                                    <br />的回應
+                                </h2>
+                            </section>
+                        </article>
+                    </section>
+
+                    <section class="author-comments maT13p">
+                        <div class="section-title fz-subtitle text-blue">專題回應（<span>5</span>則）</div>
+                        <article class="padLR10 maT2x rel-pos">
+                            <ul class="comment-list" ng-show="vm.reviewMessages.length > 0">
+                                    <!--ngRepeat: reviewMessage in vm.reviewMessages -->
+                                <li class="ng-scope" ng-hide="!vm.displayAllMessage &amp;&amp; $index >= 2">
+                                    <div class="comment-item">
+                                        <div class="circle-mask circle40 pull-left">
+                                            <img src="img/default_avatar.png" alt="">
+                                        <!--<img lazy-load="" alt="" data-original="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill" onerror="this.src='/Images/nobody.jpg?width=30&amp;height=30&amp;stretch=fill'" data-image-src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg" class="ng-isolate-scope" src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill">-->
+                                        </div>
+                                        <div class="comment-info pull-left maL1x">
+                                            <a href="#" class="fz-normal text-light-blue" ng-bind="reviewMessage.NickName">COMMENTer's NAME</a><br>
+                                            <span class="fz-s text-gray ng-binding" ng-bind="(reviewMessage.CreateOn| jsonUtcDateToLocal)">2013/04/06 05:17</span>
+                                            <p class="fz-s text-white60p taR likeComment" ng-class="{'text-pink':reviewMessage.IsLiked, 'text-white60p': !reviewMessage.IsLiked}" ng-click="vm.likeThisReply(reviewMessage)"><i class="fa fa-heart"></i> 0</p>
+                                        </div>
+                                        <p class="comment-content maL50 maTHalf1x ng-binding" ng-bind="reviewMessage.Message">酷喔!!!!!!!!!!!!!</p>
+                                    </div>
+                                    <!-- ngRepeat: replyReview in reviewMessage.ReplyReviewMessage -->
+                                    <div class="reply-item maL50 ng-scope">
+                                        <div class="circle-mask circle1x pull-left">
+                                            <img src="img/default_avatar.png" alt="">
+                                        <!--<img lazy-load="" alt="" data-original="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill" onerror="this.src='/Images/nobody.jpg?width=30&amp;height=30&amp;stretch=fill'" data-image-src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg" class="ng-isolate-scope" src="http://www.moviecaker.com/uploads/userAvatar/QeBatjuUika9olFeksuy.jpg?width=30&amp;height=30&amp;stretch=fill">-->
+                                        </div>
+                                        <div class="reply-info pull-left maL1x">
+                                            <a href="#" class="fz-s text-light-blue" ng-bind="replyReview.NickName">REPLYer's NAME</a><br>
+                                            <span class="fz-xs text-gray ng-binding" ng-bind="(replyReview.CreateOn| jsonUtcDateToLocal)">2013/04/06 05:17</span>
+                                            <p class="fz-s text-white60p taR likeReply" ng-class="{'text-pink':reviewMessage.IsLiked, 'text-white60p': !reviewMessage.IsLiked}" ng-click="vm.likeThisReply(reviewMessage)"><i class="fa fa-heart"></i> 0</p>
+                                        </div>
+                                        <p class="comment-content maL40 maTHalf1x ng-binding" ng-bind="replyReview.Message">有夠霹靂酷</p>
+                                    </div>
+                                    <!-- end ngRepeat: replyReview in reviewMessage.ReplyReviewMessage -->
+                                </li>
+                                <!-- end ngRepeat: reviewMessage in vm.reviewMessages -->
+                            </ul>
+                            <!--<a href="#" class="viewMore text-light-blue fz-s maT15">查看更多回應</a>-->
+                        </article>
+                    </section>
+                </div>
+
+                <!-- 修改自己的 review -->
+                <div id="writeCom" class="popTo write-edit-review ng-hide" ng-show="vm.showReviewWindow">
+                    <ul class="pop-nav group-wrap">
+                        <li class="pull-left" ng-click="vm.showReviewWindow=false">
+                            <button class="btn-cancel fz-s" type="button">取消</button>
+                        </li>
+                        <li class="pull-right" ng-click="vm.editReview()">
+                            <button class="btn-done fz-s" type="button">完成</button>
+                        </li>
+                        <li class="title">編輯專題文字</li>
+                    </ul>
+                    <div class="popwrap">
+                        <fieldset class="fieldset">
+                            <div>
+                                <span class="fz-s text-white60p fontW-normal">專題標題</span><br />
+                                <input type="text" class="projectTitle-edit maTHalf1x fontW-bold" value="TotalFilm評最佳20部靈魂互換身體的電影">
+                            </div>
+                            <div class="maT2x">
+                                <span class="fz-s text-white60p">專題內容</span><br />
+                                <textarea class="reviewContent maTHalf1x" name="comment" id="comment" required ng-model="vm.review.Review" ng-bind="vm.review.Review"></textarea>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div><!-- end of ng-controller-->
+
+            <!--<div class="loading-ajax" ng-show="main.loadingStatus()">
+                <i class="fa fa-spinner fa-pulse fa-4x green"></i>
+            </div>-->
+
+            <div class="top circle40">
+                <i class="fa fa-angle-up" aria-hidden="true"></i>
+            </div> 
+        </div> <!-- end of ng-class -->
+    </div> <!-- end of ng-show="main.appReady" -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <!--<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>-->
+
+    <!--<script defer src='http://test.moviecaker.com/Scripts/jquery-1.8.3.min.js'></script>-->
+    <!--<script defer src='http://test.moviecaker.com/Scripts/jquery-ui-1.10.3.min.js'></script>-->
+    <script defer src='http://test.moviecaker.com/Scripts/jquery/jquery.ui.touch-punch.min.js'></script>
+    <script defer src='http://test.moviecaker.com/Scripts/jquery/jquery.lazyload.min.js'></script>
+    <script defer src='http://test.moviecaker.com/Scripts/jquery/jquery.cookie.js'></script>
+    <script defer src='http://test.moviecaker.com/Scripts/moment/moment.min.js'></script>
+    <script defer src='http://test.moviecaker.com/Scripts/mobile/main.js'></script>
+
+    <script defer src='http://test.moviecaker.com/scripts/angular/angular.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/cssPreload/cssPreload.factory.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/cssPreload/cssPreload.directive.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/ngTouch/ng-touch.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/sortable/ng-sortable.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/infiniteScroll/ng-infinite-scroll.min.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/app.mobile.module.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/services/filter.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/services/service.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/multi-search.directive.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/topic-video-search.directive.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/star-rating.directive.js'></script>
+    <script defer src='http://test.moviecaker.com/scripts/angular/components/all.directive.js'></script>
+
+    <script defer src="http://test.moviecaker.com/scripts/angular/controllers/mobile/layout.ctrl.js?v=20161209"></script>
+    <script defer src="http://test.moviecaker.com/Scripts/angular/controllers/mobile/topic-details.ctrl.js"></script>
+        
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+    <script>
+        wx.config({
+            debug: false, 
+            appId: 'wx3069e676ab7765a2', 
+            timestamp: '1498547700', 
+            nonceStr: 'FCCB60FB512D13DF5083790D64C4D5DD', 
+            signature: 'e5e387d1611410edb7a40b79b7dfcefee3ff982b', 
+            jsApiList: [
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+            ] 
+        });
+
+        wx.error(function (res) {
+            console.log(res);
+            console.log('验证失败');
+        });
+    </script>
+
+    <script>
+        wx.ready(function () {
+            wx.onMenuShareTimeline({
+                title: '《在電影中看見的愛情心法13條》專題來自 MovieCaker 的' + '歡影 ', // 分享标题
+                link: 'http://test.moviecaker.com/mobile/topic/160', // 分享链接
+                imgUrl: 'http://121.41.34.59/Content/pictures/files/M0601467_posters.jpg?width=300', // 分享图标
+                //success: function () {
+                //    // 用户确认分享后执行的回调函数
+                //},
+                //cancel: function () {
+                //    // 用户取消分享后执行的回调函数
+                //}
+            });
+
+            wx.onMenuShareAppMessage({
+                title: '《在電影中看見的愛情心法13條》專題來自 MovieCaker 的' + '歡影 ', // 分享标题
+                desc: '你最嚮往什麼樣的愛情？什麼樣的愛情最迷人？有人嚮往青梅竹馬的愛情。有人嚮往一見鍾情的心悸。有人貪戀絕處逢生的逆轉……每一次的選擇都要看邱比特從什麼角度射出他的箭。愛情，通常不愛說話，它只是悄悄地溢滿你的心胸，一股勁地旋轉、奔騰，停不了，也不想停下來的…。&#160;我在電影中看見的愛情心法13條送給天下癡情男女，只有堅持信念，持之以恆，才能讓幽微的愛情慢慢孵化成巨大的氣流，讓自己和他人都能興會淋漓地見證一個愛情盛宴。', // 分享描述
+                link: 'http://test.moviecaker.com/mobile/topic/160', // 分享链接
+                imgUrl: 'http://121.41.34.59/Content/pictures/files/M0601467_posters.jpg?width=300', // 分享图标
+                type: '', 
+                dataUrl: '', 
+                //success: function () {
+                //    // 用户确认分享后执行的回调函数
+                //},
+                //cancel: function () {
+                //    // 用户取消分享后执行的回调函数
+                //}
+            });
+        });
+    </script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-68883772-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            // 測試搜尋樣式，不是真的搜尋功能
+            $( function() {
+                var availableTags = [
+                    "美女與野獸 Beauty and the Beast (2017)",
+                    "小太陽的願望 Little Miss Sunshine (2006)",
+                    "醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                    "醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "美女與野獸 Beauty and the Beast (2017)",
+                    "小太陽的願望 Little Miss Sunshine (2006)",
+                    "醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                    "醜女大翻身 200 Pounds Beauty (2006)","醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "美女與野獸 Beauty and the Beast (2017)",
+                    "小太陽的願望 Little Miss Sunshine (2006)",
+                    "醜女大翻身 200 Pounds Beauty (2006)",
+                    "野獸情人 Beastly (2011)",
+                    "玩美女人 Volver (2006)",
+                    "神鬼驚奇：古生物復活 The Extraordinary Adventures of Adele Blanc-Sec (2010)",
+                    "醜女大翻身 200 Pounds Beauty (2006)"
+                ];
+                $( "#search-input" ).autocomplete({
+                    source: availableTags,
+                    appendTo: "#search-autocomplete",
+                    open: function(){
+                        $('.more').addClass("searching"); // 有搜尋結果再出現”更多搜尋“按鈕
+                    },
+                    close: function(){
+                        $('.more').removeClass("searching"); // 沒有搜尋結果不出現”更多搜尋“按鈕
+                    }
+                });
+            });
+
+            // 首頁點擊搜尋的動態效果
+            $('#search-icon').on("click", function(){
+                window.scrollBy(0, 1); // 讓鍵盤出現時頁面不會被推上去
+                $('.search-area').addClass("searching");
+                $('.btn-close').addClass("searching");
+                $('.search-keyword').addClass("searching");
+            });
+            // 點擊叉按鈕關閉搜尋
+            $('.btn-close').on("click", function(){
+                $('.search-area').removeClass("searching");
+                $('.btn-close').removeClass("searching");
+                $('.search-keyword').removeClass("searching");
+            });
+
+            // 點擊線上看按鈕會出現下拉選單
+            $('.btn-playMovie').on('click',function(){
+                if ($('.play-movie-selection').hasClass('show')) {
+                    $('.play-movie-selection').removeClass('show');
+                } else {
+                    $('.play-movie-selection').addClass('show');
+                }
+            });
+
+            // 滑動畫面 會出現黑色底
+            $(window).scroll(function() {
+                var windowpos = $(window).scrollTop();
+                var header = $('.header');
+                var likeShare = $('.like-share-wrap');
+                var nextSect = $('.nextSection');
+                var content = $('.content-wrap');
+                var shareToBtns = $('.share-wrap');
+
+                if ( windowpos > 0 ) {
+                    header.addClass('scroll');
+                    content.addClass('scroll');
+                } else {
+                    header.removeClass('scroll');
+                    content.removeClass('scroll');
+                }
+                
+                // 讓喜歡分享按鈕可以 fixed 住 (專題頁是 300)
+                if (windowpos > 510 ) {
+                    likeShare.addClass('fixed');
+                    header.addClass('hide');
+                    nextSect.removeClass('maT13p').addClass('maT30p');
+                    shareToBtns.addClass('fixed');
+                } else {
+                    likeShare.removeClass('fixed');
+                    header.removeClass('hide');
+                    nextSect.addClass('maT13p').removeClass('maT30p');
+                    shareToBtns.removeClass('fixed');
+                }
+            });
+
+            $('#btn-share-review').on('click', function() {
+                $('.share-wrap').css('display','block');
+            });
+
+            // 電影列表顯示的下拉
+            $('#display-btn').on('click', function() {
+                if ($('.display-ver-dropdown').hasClass('show')) {
+                    $('.display-ver-dropdown').removeClass('show');
+                } else {
+                    $('.display-ver-dropdown').addClass('show');
+                }
+            });
+
+            $('.project-movie-nav > li').on('click', function(){
+                $('.project-movie-nav > li').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            $('.display-ver-dropdown > li').on('click', function(){
+                $('.display-ver-dropdown > li').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            $('.check-in-btns > li > i').on('click', function(){
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                } else {
+                    $(this).addClass('active');
+                }
+            });
+
+            $('.viewComment').on('click', function(){
+                if ( $(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    $(this).next('li.movie-comment-text').removeClass('active');
+                } else {
+                    $(this).addClass('active');
+                    $(this).next('li.movie-comment-text').addClass('active');
+                }
+            });
+
+            // $('.grid').masonry({
+            //     itemSelector: '.grid-item',
+            //     columnWidth: '.grid-sizer',
+            //     percentPosition: true,
+            //     gutter: 10
+            // });
+
+            
+
+        });
+    </script>
+
+</body>
+</html>
+<!--<link css-preload ng-href='/Content/jquery-ui.css' rel='stylesheet' />
+<link css-preload ng-href='/Content/mobile/screen.css' rel='stylesheet' />
+<link css-preload ng-href='/Content/mobile/custom.css' rel='stylesheet' />
+
+<link css-preload ng-href="/Content/mobile/font-awesome.min.css" rel="stylesheet" />
+<link css-preload ng-href="/Content/mobile/icomoon/style.min.css" rel="stylesheet" />-->
